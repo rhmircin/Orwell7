@@ -1,0 +1,3 @@
+[22-Nov-2015 22:29:45 UTC] PHP Fatal error:  Class 'Form' not found in /home/rhmircin/mooc/storage/framework/views/e0334dcab4636cf96e36446784bc132a on line 12
+[22-Nov-2015 22:34:13 UTC] PHP Fatal error:  Class 'App\Providers\AuthServiceProvider' not found in /home/rhmircin/mooc/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php on line 146
+[13-Feb-2016 13:57:29 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Frontend\Auth\Auth' not found in /home/rhmircin/mooc/app/Http/Controllers/Frontend/Auth/PasswordController.php on line 32

@@ -1,0 +1,76 @@
+<?php
+return [
+    /*
+    |--------------------------------------------------------------------------
+    | Application Language Lines
+    |--------------------------------------------------------------------------
+    |
+    | The following language lines are used during authentication for various
+    | messages that we need to display to the user. You are free to modify
+    | these language lines according to your application's requirements.
+    |
+    */
+    'title' => 'Orwell7',
+    'sign_in' => 'Iniciar Sesión',
+    'remember' => 'Recordar Usuario',
+    'register' => 'Registrarse',
+    'welcome' => 'Bienvenido ',
+    'logout' => 'Cerrar Sesión',
+    'why_join' => '¿Por qué Orwell7?',
+    'why_join_desc' => '',
+    'why_1' => 'Profesores expertos',
+    'why_2' => 'Contenido universal',
+    'why_3' => 'Teoría y práctica',
+    'why_4' => 'Recursos adicionales',
+    'why_1_desc' => 'Profesores expertos',
+    'why_2_desc' => 'Contenido universal',
+    'why_3_desc' => 'Teoría y práctica',
+    'why_4_desc' => 'Recursos adicionales',
+    'home' => 'Inicio',
+    'courses' => 'Cursos',
+    'contact' => 'Contacto',
+    'slider_01' => '',
+    'slider_02' => '',
+    'slider_03' => '',
+    'slider_04' => '',
+    'slider_05' => '',
+    'slider_06' => '',
+    'slider_07' => '',
+    'slider_08' => '',
+    'slider_09' => '',
+    'slider_10' => '',
+    'slider_11' => '',
+    'slider_12' => '',
+    'slider_13' => '',
+    'slider_14' => '',
+    'slider_15' => '',
+    'slider_16' => '',
+    'next_courses' => 'Próximos Cursos',
+    'next_courses_desc' => '',
+    'latest_courses' => 'Últimos Cursos',
+    'latest_courses_desc' => '',
+    'email' => 'Correo',
+    'password' => 'Contraseña',
+    'forgot_password' => '¿Olvidó su contraseña?',
+    'confirm_password' => 'Confirmar Contraseña',
+    'user' => 'Usuario',
+    'username' => 'Nombre',
+    'speakers' => 'Expositores',
+    'details' => 'Detalles',
+    'courses_all' => 'Ver todos los cursos',
+    'all_courses' => 'Todos los Cursos',
+    'categories' => 'Categorías',
+    'description' => 'Descripción',
+    'related_content' => 'Relacionado',
+    'download' => 'Descargar archivos',
+    'search' => 'Ingrese búsqueda',
+    'hours' => 'Lunes - Viernes / 9.00AM - 06.00PM',
+    'subscribe' => '',
+    'subscribe_btn' => 'Subsríbete',
+    'about_us' => 'Acerca de nosotros',
+    'terms' => 'Términos y condiciones',
+    'phone' => '+51 988820645',
+    'questions' => 'Preguntas? ',
+    'admin' => 'Admin Panel',
+    'reset' => 'Resetear password'
+];
