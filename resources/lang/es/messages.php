@@ -53,8 +53,8 @@ return [
     'password' => 'Contraseña',
     'forgot_password' => '¿Olvidó su contraseña?',
     'confirm_password' => 'Confirmar Contraseña',
-    'user' => 'Usuario',
-    'username' => 'Nombre',
+    'user' => 'Nombre',
+    'name' => 'Nombre',
     'speakers' => 'Expositores',
     'details' => 'Detalles',
     'courses_all' => 'Ver todos los cursos',
@@ -72,5 +72,13 @@ return [
     'phone' => '+51 988820645',
     'questions' => 'Preguntas? ',
     'admin' => 'Admin Panel',
-    'reset' => 'Resetear password'
+    'reset' => 'Resetear password',
+    'profile' => 'Perfil',
+    'settings' => 'Ajustes',
+    'country' => 'País',
+    'gender' => 'Género',
+    'education' => 'Nivel de Instrucción',
+    'dob' => 'Fecha de Nacimiento',
+    'telephone' => 'Teléfono',
+    'downloads' => 'Descargas'
 ];

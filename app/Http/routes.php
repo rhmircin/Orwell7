@@ -38,7 +38,7 @@ Route::group(['namespace' => 'Frontend'], function(){
 
     Route::get('contact', array(
         'uses' => 'F_ContactController@index',
-        'as'   => 'home'
+        'as'   => 'contact'
     ));
 
     Route::get('courses', array(
@@ -46,13 +46,15 @@ Route::group(['namespace' => 'Frontend'], function(){
         'as'   => 'courses'
     ));
 
-    //Route::get('courses/{id}', 'F_CourseController@detail');
     Route::get('courses/{slug}', 'F_CourseController@detail');
-    //Route::get('courses/{id_course}/{id}', 'F_KnowledgeUnitController@detail');
     Route::get('courses/{slug_course}/{slug}', 'F_KnowledgeUnitController@detail');
 
     // Route accessible to auth user only
     Route::group(['middleware' => 'auth'], function(){
+
+        // Profile
+        Route::get('profile', 'F_UserController@index');
+        Route::post('profile', 'F_UserController@saveprofile');
 
         // Course Rating
         Route::get('courses/{slug}/rate/{rate}', 'F_CourseController@rate');
@@ -85,4 +87,8 @@ Route::group(['namespace' => 'Backend', 'middleware' => ['auth', 'admin'], 'pref
 
 });
 
-Route::get('test','Test@Test');
+Route::get('test',function (){
+    $user = Auth::user();
+
+    echo $user->telephone; // ? "true" : "false";
+});

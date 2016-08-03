@@ -4,6 +4,7 @@ namespace App;
 
 use App\Role;
 use App\UserAuth;
+use Carbon\Carbon;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
@@ -21,7 +22,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'country_id', 'gender_id', 'education_id', 'age', 'dateofbirth', 'telephone'
     ];
 
     /**
@@ -61,5 +62,24 @@ class User extends Authenticatable
     */
     public function auths() {
         return $this->hasMany('App\UserAuth');
+    }
+
+    /**
+    * Get date of birth
+    */
+    public function getDateOfBirthAttribute($value)
+    {
+        return Carbon::parse($value)->format('Y-m-d');
+    }
+
+    /**
+     * Format date of birth.
+     *
+     * @param  string  $value
+     * @return string
+     */
+    public function formDateOfBirthAttribute($value)
+    {
+        return Carbon::parse($value)->format('Y-m-d');
     }
 }

@@ -13,12 +13,26 @@
                     <a href="{{URL::to('login')}}" class="button_top" id="login_top">{{ trans('messages.sign_in') }}</a>
                     <a href="{{URL::to('register')}}" class="button_top hidden-xs" id="apply">{{ trans('messages.register') }}</a>
                     @else
-                    <a href="#" class="button_top hidden-xs">{{ trans('messages.welcome') .Auth::user()->name }}</a>
-                    @if(Auth::user()->isAdmin())
-                    <a href="{{URL::to('admin')}}" class="button_top hidden-xs">{{ trans('messages.admin') }}</a>
+                    <ul class="pull-right user_panel">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                {{ trans('messages.welcome') }} <strong> {{ Auth::user()->name }} </strong> 
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{URL::to('profile')}}"><i class="icon-user"></i> {{ trans('messages.profile') }}</a></li>
+                                <li><a href="#"><i class="icon-download"></i> {{ trans('messages.downloads') }}</a></li>
+                                <li><a href="#"><i class="icon-cog"></i> {{ trans('messages.settings') }}</a></li>
+                                <li class="divider"></li>
+                                @if(Auth::user()->isAdmin())
+                                <li><a href="{{URL::to('admin')}}"><i class="icon-briefcase"></i> {{ trans('messages.admin') }}</a>
+                                @endif
+                                <li><a href="{{URL::to('logout')}}"><i class="icon-off"></i> {{ trans('messages.logout') }}</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                     @endif
-                    <a href="{{URL::to('logout')}}" class="button_top hidden-xs" id="logout">{{ trans('messages.logout') }}</a>
-                    @endif
+
                 </div>
                 <!--<ul id="top_nav" class="hidden-xs">
                 <li><a href="about_us.html">About</a></li>
