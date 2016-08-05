@@ -2166,6 +2166,10 @@ ul.user_panel a.dropdown-toggle{color:#fff;}
 .profile ul li:last-child{
 	border-bottom:none;
 }
+.imginput{
+	display: none !important;
+}
+
 #payment_opt{
 padding-top:25px; padding-bottom:15px;
 }
@@ -2280,6 +2284,10 @@ img.speaker {
    background: #fff;
    padding: 30px 30px 10px 30px;
    border: 1px solid #ededed;
+}
+
+.no-margin-bottom {
+  margin-bottom: 1px !important;
 }
 
 /* carousel */
@@ -2752,6 +2760,9 @@ ul.list_2 li a:hover {
 	}
 .media-body{padding-left:10px;}
 
+.width100 {
+	width: 100% !important;
+}
 
 /*============================================================================================*/
 /* 5.  MEDIA QUERIES */

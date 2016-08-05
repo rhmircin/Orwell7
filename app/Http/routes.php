@@ -49,13 +49,25 @@ Route::group(['namespace' => 'Frontend'], function(){
     Route::get('courses/{slug}', 'F_CourseController@detail');
     Route::get('courses/{slug_course}/{slug}', 'F_KnowledgeUnitController@detail');
 
+    // Profile Images
+    Route::get('profile/image/{filename}', [
+        'uses' => 'F_UserController@getUserImage',
+        'as' => 'profile.image'
+    ]);
+
     // Route accessible to auth user only
     Route::group(['middleware' => 'auth'], function(){
 
         // Profile
-        Route::get('profile', 'F_UserController@index');
-        Route::post('profile', 'F_UserController@saveprofile');
-
+        Route::get('profile', [
+            'uses' => 'F_UserController@index',
+            'as' => 'profile'
+        ]);
+        Route::post('profile', [
+            'uses' => 'F_UserController@saveprofile',
+            'as' => 'profile.save'
+        ]);
+        
         // Course Rating
         Route::get('courses/{slug}/rate/{rate}', 'F_CourseController@rate');
 

@@ -7,7 +7,7 @@
 
 @section('content')
 
-    @include('frontend.partials.slider')
+    @include('frontend.partials.panel')
     @include('frontend.partials.features')
     @include('frontend.course.latest_grid')
     @include('frontend.course.next_grid')

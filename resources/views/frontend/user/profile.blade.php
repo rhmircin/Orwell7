@@ -30,10 +30,21 @@
 					<div class="tab-pane fade in active" id="profile">
 						<div class="row">
 							<aside class="col-md-4">
-							{!! Form::open(array('action' => 'Frontend\F_UserController@saveprofile')) !!}
+							{{ Form::open(array('route' => 'profile.save', 'files' => true)) }}
 								<div class=" box_style_1 profile">
-									<p class="text-center"><img src="img/teacher_2_small.jpg" alt="Teacher" class="img-circle styled"></p>
+									<p class="text-center" id='imageinput'>
+										@if (Storage::disk('local')->has($user->first_name . '-' . $user->id . '.jpg'))
+											<img src="{{ route('profile.image', ['filename' => $user->name . '-' . $user->id . '.jpg']) }}" alt="" class="img-circle styled width100">
+										@else
+											<img src="img/teacher_2_small.jpg" alt="Teacher" class="img-circle styled">
+										@endif
+									</p>
+									
+									{{ Form::file('image', array('class' => 'imginput')) }}
 									<ul>
+										<li>
+											@include('frontend.partials.errors')
+										</li>
 										<li>{{ trans('messages.name') }}
 											<strong class="pull-right">{{ $user->name }}</strong> 
 										</li>
@@ -63,12 +74,12 @@
 										<li>{{ trans('messages.dob') }}
 											{{ Form::date('dateofbirth', empty($user->dateofbirth) ? \Carbon\Carbon::now() : $user->dateofbirth) }}
 										<li> 
-											{{ Form::submit('Update Profile', ['class' => 'btn btn-primary form-control']) }}
+											{{ Form::submit('Update Profile', ['class' => 'btn btn-primary form-control no-margin-bottom']) }}
 										</li>
 									</ul>
 									
 								</div><!-- End box-sidebar -->
-							{!! Form::close() !!}
+							{{ Form::close() }}
 							</aside><!-- End aside -->
 							<div class="col-md-8">
 								<h3>Biography</h3>
@@ -219,4 +230,5 @@
 <script src='js/jquery-ui.custom.min.js'></script>
 <script src='js/fullcalendar.min.js'></script>
 <script src='js/fullcalendar_func.js'></script>
+<script src='js/profile.js'></script>
 @endsection
