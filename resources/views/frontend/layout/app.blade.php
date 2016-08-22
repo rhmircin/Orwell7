@@ -18,9 +18,8 @@
         <!-- CSS -->
         @yield('styles')
         <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet"/>
-        <link href="{{ asset('css/superfish.css') }}" rel="stylesheet"/>
-        <link href="{{ asset('css/style.css') }}" rel="stylesheet"/>
         <link href="{{ asset('fontello/css/fontello.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/main.css') }}" rel="stylesheet"/>
 
         <!--[if lt IE 9]>
         <script src="http://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -32,7 +31,6 @@
     </head>
 
     <body>
-        @include('frontend.partials.header')
         @include('frontend.partials.nav')
 
         @yield('content')
@@ -42,14 +40,7 @@
         <!-- Scripts -->
         @yield('scripts')
         <!-- OTHER JS -->
-        <script src="{{ asset('js/superfish.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('js/retina.min.js') }}"></script>
-        <script src="{{ asset('js/jquery.placeholder.js') }}"></script>
-        <script src="{{ asset('js/functions.js') }}"></script>
-        <script src="{{ asset('js/classie.js') }}"></script>
-        <script src="{{ asset('js/uisearch.js') }}"></script>
-        <script>new UISearch( document.getElementById( 'sb-search' ) );</script>
     </body>
 
 </html>

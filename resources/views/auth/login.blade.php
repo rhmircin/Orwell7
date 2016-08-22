@@ -4,7 +4,7 @@
 <section id="login_bg">
     <div  class="container">
         <div class="row">
-            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 margintop marginbottom" style="background : white;">
                 <div id="login">
                     <p class="text-center">
                         <img src="{{ URL::to('img/login_logo.png') }}" alt="">
@@ -23,12 +23,16 @@
                         </div>
                     </div> <!-- end row -->
 
-                    <div class="login-or"><hr class="hr-or"><span class="span-or">or</span></div>
+                    <hr>
 
                     <div class="form-group  {{ $errors->has('email') ? 'has-error' : '' }}">
-                        {!! Form::label('email', trans('messages.email'), array('class' => 'control-label')) !!}
                         <div class="controls">
-                            {!! Form::text('email', null, array('class' => 'form-control')) !!}
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon1">
+                                <i class="icon-mail"></i>
+                                </span>
+                                <input type="email" class="form-control" placeholder="{{ trans('messages.email') }}" aria-describedby="basic-addon1">
+                            </div>
                             @if ($errors->has('email'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('email') }}</strong>
@@ -38,9 +42,13 @@
                     </div>
 
                     <div class="form-group  {{ $errors->has('password') ? 'has-error' : '' }}">
-                        {!! Form::label('password', trans('messages.password'), array('class' => 'control-label')) !!}
                         <div class="controls">
-                            {!! Form::password('password', array('class' => 'form-control')) !!}
+                            <div class="input-group">
+                                <span class="input-group-addon" id="basic-addon2">
+                                    <i class="icon-key"></i>
+                                </span>
+                                <input type="password" class="form-control" placeholder="{{ trans('messages.password') }}" aria-describedby="basic-addon2">
+                            </div>
                             @if ($errors->has('password'))
                                 <span class="help-block">
                                     <strong>{{ $errors->first('password') }}</strong>
@@ -57,8 +65,10 @@
                         {!!  Form::checkbox('remember'); !!} {{ trans('messages.remember') }}
                     </div>
 
-                    <button type="submit" class="button_fullwidth">{{ trans('messages.sign_in') }}</button>
-                    <a href="{{URL::to('register')}}" class="button_fullwidth-2">{{ trans('messages.register') }}</a>
+                    <a href="{{URL::to('register')}}" class="btn btn-default pull-right">
+                        {{ trans('messages.register') }}
+                    </a>
+                    <button type="submit" class="btn btn-info pull-right">{{ trans('messages.sign_in') }}</button>
                   {!! Form::close() !!}
 
                 </div>

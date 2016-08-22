@@ -1,30 +1,97 @@
-<nav>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div id="mobnav-btn"></div>
-                <ul class="sf-menu">
-                    <li>
-                      <a href="{{ URL::to('/home') }}">{{ trans('messages.home') }}</a>
-                    </li>
-                    <li>
-                      <a href="{{ URL::to('/courses') }}">{{ trans('messages.courses') }}</a>
-                    </li>
-                    <li>
-                      <a href="{{ URL::to('/contact') }}">{{ trans('messages.contact') }}</a>
-                    </li>
-                </ul>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="{{URL::to('/home')}}" class="navbar-brand">
+                <img src="img/logo.jpg" alt="{{ trans('messages.title') }}"></img>
+            </a>
+        </div>
 
-            <div class="col-md-3 pull-right hidden-sm hidden-xs">
-                <div id="sb-search" class="sb-search">
-                    <form>
-                        <input class="sb-search-input" placeholder="{{ trans('messages.search') }}" type="text" value="" name="search" id="search">
-                        <input class="sb-search-submit" type="submit" value="">
-                        <span class="sb-icon-search"></span>
-                    </form>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                @if(Request::is('home*')) 
+                <li class="active">
+                @elseif(Request::path() == '/') 
+                <li class="active">
+                @else
+                <li>
+                @endif
+                    <a href="{{ URL::to('/home') }}">{{ trans('messages.home') }} 
+                    <span class="sr-only">(current)</span>
+                    </a>
+                </li> 
+                @if(Request::is('courses*'))
+                <li class="active">
+                @else
+                <li>
+                @endif
+                    <a href="{{ URL::to('/courses') }}">{{ trans('messages.courses') }}</a>
+                </li>
+                @if(Request::is('contact*')) 
+                <li class="active">
+                @else
+                <li>
+                @endif
+                    <a href="{{ URL::to('/contact') }}">{{ trans('messages.contact') }}</a>
+                </li>
+                @if(Request::is('blog*'))
+                <li class="active">
+                @else
+                <li>
+                @endif
+                    <a href="{{ URL::to('/blog') }}">{{ trans('messages.blog') }}</a>
+                </li>
+            </ul>
+
+            <form class="navbar-form navbar-left">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="{{ trans('messages.search') }}">
                 </div>
-            </div><!-- End search -->
-            </div>
-        </div><!-- End row -->
-    </div><!-- End container -->
+                <button type="submit" class="btn btn-default">{{ trans('messages.submit') }}</button>
+             </form>
+
+            <ul class="nav navbar-nav navbar-right">
+                @if (Auth::guest())
+                <li>
+                    <a href="{{URL::to('login')}}">{{ trans('messages.sign_in') }}</a>
+                </li>
+                <li>
+                    <a href="{{URL::to('register')}}">{{trans('messages.register') }}</a>
+                </li>
+                @else
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        {{ trans('messages.welcome') }} <strong> {{ Auth::user()->name }} </strong> 
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{URL::to('profile')}}"><i class="icon-user"></i> {{ trans('messages.profile') }}</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="icon-download"></i> {{ trans('messages.downloads') }}</a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="icon-cog"></i> {{ trans('messages.settings') }}</a>
+                        </li>
+                        <li class="divider"></li>
+                        @if(Auth::user()->isAdmin())
+                        <li>
+                            <a href="{{URL::to('admin')}}"><i class="icon-briefcase"></i> {{ trans('messages.admin') }}</a>
+                        </li>
+                        @endif
+                        <li>
+                            <a href="{{URL::to('logout')}}"><i class="icon-off"></i> {{ trans('messages.logout') }}</a>
+                        </li>
+                    </ul>
+                </li>
+                @endif
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
 </nav>

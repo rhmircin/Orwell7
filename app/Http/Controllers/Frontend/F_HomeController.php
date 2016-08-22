@@ -14,7 +14,7 @@ class F_HomeController extends Controller {
 	 */
 	public function index()
 	{
-		$site = 'LEARN';
+		$site = 'home';
 
 		$latest = Course::where('active', 1)
 			            ->orderBy('created_at', 'desc')

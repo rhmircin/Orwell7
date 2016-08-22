@@ -13,7 +13,7 @@ class F_ContactController extends Controller {
 	 */
 	public function index()
 	{
-		$site = 'LEARN';
+		$site = 'contact';
 		return view('frontend.contact.main', compact('site'));
 	}
 

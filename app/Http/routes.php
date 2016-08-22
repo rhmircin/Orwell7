@@ -100,7 +100,7 @@ Route::group(['namespace' => 'Backend', 'middleware' => ['auth', 'admin'], 'pref
 });
 
 Route::get('test',function (){
-    $user = Auth::user();
-
-    echo $user->telephone; // ? "true" : "false";
+    //echo Request::path();
+    $data = Request::is('test*');
+    dd($data);
 });

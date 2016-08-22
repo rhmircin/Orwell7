@@ -1,0 +1,162 @@
+/*============================================================================================*/
+/* 1.  SITE STRUCTURE and TYPOGRAPHY */
+/*============================================================================================*/
+/* Fonts and Icons */
+
+/*============================================================================================*/
+/* 2.  SECTIONS */
+/*============================================================================================*/
+/* Course Panel */
+#course-panel{
+	margin-bottom: 20px !important;
+	margin-top: 20px !important;
+}
+/* Features */
+#main-features{
+	background: #F6F6F6;
+}
+/* Testimonials */
+#testimonials{
+	background: #02B3E4;
+	color: white;
+}
+/* Quotes */
+#quote-carousel img{
+  width: 100px;
+  height: 100px
+}
+/* Login */
+#login_bg{
+	background: #02B3E4;
+}
+
+/*============================================================================================*/
+/* 3.  CSS LIBRARY */
+/*============================================================================================*/
+.navbar-brand {
+  padding: 0px;
+}
+
+.navbar-brand>img {
+  height: 100%;
+  padding: 15px;
+  width: auto;
+}
+
+.fillwidth {
+    min-width: 100%;
+    height: auto;
+    display: block !important; 
+    position: relative; 
+    width: 100%;
+}
+
+.navbar {
+	margin-bottom: 0px !important;
+}
+
+.marginbottom{
+	margin-bottom: 20px !important;
+}
+
+.margintop{
+	margin-top: 20px !important;
+}
+
+.circle-icon {
+    background: #02B3E4;
+    width: 40px;
+    height: 40px;
+    border-radius: 40%;
+    text-align: center;
+    line-height: 40px;
+    vertical-align: middle;
+    padding: 10px;
+    margin-right: 5px;
+}
+
+.feature {
+	color: #02B3E4;
+	margin-left: 50px;
+	margin-top: 5px;
+}
+
+.featurebox {
+	padding: 15px;
+}
+
+.featureicn{
+	color: #02B3E4;
+	position: absolute;
+	margin-top: 6px !important;
+}
+
+.featuredsc{
+	font-size: 12px;
+	margin-top: 25px !important;
+}
+
+.img-circle {
+	background-color:#ededed;
+	-moz-box-shadow: 0px 0px 0px 5px #ededed;
+	-webkit-box-shadow: 0px 0px 0px 5px #ededed;
+	box-shadow: 0px 0px 0px 5px #ededed;
+	margin:auto;
+}
+
+.fntsz10{
+	font-size: 10px;
+}
+
+.fntsz12{
+	font-size: 12px;
+}
+
+.row-centered {
+    text-align:center;
+}
+
+.col-centered {
+    display:inline-block;
+    float:none;
+    text-align:left;
+    margin-right:-4px;
+}
+
+.footerlogo {
+	height:100px; 
+	width: 100px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+div.layoutc {
+	text-align: center;
+}
+
+#nav-footer ul{
+	list-style:none;
+	padding:0;
+	margin:10px 0 20px 0;
+}
+
+ul#follow_us li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+ul#follow_us li a {
+    width: 34px;
+    height: 34px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 2px solid #02B3E4;
+    color: #02B3E4;
+    display: block;
+    line-height: 32px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: 400;
+}

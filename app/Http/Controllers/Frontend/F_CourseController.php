@@ -25,7 +25,7 @@ class F_CourseController extends Controller
 	*/
 	public function grid()
 	{
-		$site = 'LEARN';
+		$site = 'courses';
 
 		$courses = Course::where('active', 1)
 		->orderBy('name', 'asc')
