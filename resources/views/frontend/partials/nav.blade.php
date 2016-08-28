@@ -25,13 +25,23 @@
                     <span class="sr-only">(current)</span>
                     </a>
                 </li> 
+
                 @if(Request::is('courses*'))
-                <li class="active">
+                <li class="dropdown active">
                 @else
-                <li>
+                <li class="dropdown">
                 @endif
-                    <a href="{{ URL::to('/courses') }}">{{ trans('messages.courses') }}</a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ trans('messages.courses') }}<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a href="{{ URL::to('/courses') }}">{{ trans('messages.basiccourse') }}</a>
+                        </li>
+                        <li>
+                            <a href="{{ URL::to('/courses') }}">{{ trans('messages.advancourse') }}</a>
+                        </li>
+                    </ul>
                 </li>
+
                 @if(Request::is('contact*')) 
                 <li class="active">
                 @else
@@ -39,6 +49,7 @@
                 @endif
                     <a href="{{ URL::to('/contact') }}">{{ trans('messages.contact') }}</a>
                 </li>
+
                 @if(Request::is('blog*'))
                 <li class="active">
                 @else

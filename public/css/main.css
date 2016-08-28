@@ -29,7 +29,25 @@
 #login_bg{
 	background: #02B3E4;
 }
-
+/*  To Top */
+#toTop {
+	width:100px;
+	border:1px solid #ccc;
+	background:#f7f7f7;
+	text-align:center;
+	padding:5px;
+	position:fixed; 
+	bottom:10px;
+	right:10px;
+	cursor:pointer; 
+	display:none;
+	color:#333;
+	font-size:11px;
+}
+/* Footer */
+footer {
+	background: #F6F6F6;
+}
 /*============================================================================================*/
 /* 3.  CSS LIBRARY */
 /*============================================================================================*/
@@ -159,4 +177,14 @@ ul#follow_us li a {
     font-size: 18px;
     text-align: center;
     font-weight: 400;
+}
+
+.loginbtn {
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+}
+
+.backwhite {
+	background : white;
 }

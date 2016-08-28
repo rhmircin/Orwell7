@@ -2,12 +2,12 @@
 
 @section('content')
 <section id="login_bg">
-    <div  class="container">
+    <div class="container">
         <div class="row">
-            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 margintop marginbottom" style="background : white;">
+            <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3 col-xs-8 col-xs-offset-2 margintop marginbottom backwhite">
                 <div id="login">
                     <p class="text-center">
-                        <img src="{{ URL::to('img/login_logo.png') }}" alt="">
+                        <img src="{{ URL::to('img/logo_128.png') }}" alt="">
                     </p>
                     <hr>
                     {!! Form::open(array('url' => URL::to('login'), 'method' => 'POST', 'files'=> true)) !!}
@@ -31,7 +31,7 @@
                                 <span class="input-group-addon" id="basic-addon1">
                                 <i class="icon-mail"></i>
                                 </span>
-                                <input type="email" class="form-control" placeholder="{{ trans('messages.email') }}" aria-describedby="basic-addon1">
+                                <input type="email" name="email" class="form-control" placeholder="{{ trans('messages.email') }}" aria-describedby="basic-addon1">
                             </div>
                             @if ($errors->has('email'))
                                 <span class="help-block">
@@ -47,7 +47,7 @@
                                 <span class="input-group-addon" id="basic-addon2">
                                     <i class="icon-key"></i>
                                 </span>
-                                <input type="password" class="form-control" placeholder="{{ trans('messages.password') }}" aria-describedby="basic-addon2">
+                                <input type="password" name="password" class="form-control" placeholder="{{ trans('messages.password') }}" aria-describedby="basic-addon2"  >
                             </div>
                             @if ($errors->has('password'))
                                 <span class="help-block">
@@ -65,10 +65,17 @@
                         {!!  Form::checkbox('remember'); !!} {{ trans('messages.remember') }}
                     </div>
 
-                    <a href="{{URL::to('register')}}" class="btn btn-default pull-right">
-                        {{ trans('messages.register') }}
-                    </a>
-                    <button type="submit" class="btn btn-info pull-right">{{ trans('messages.sign_in') }}</button>
+                    <div class="row loginbtn">
+                        <button type="submit" class="btn btn-info fillwidth">
+                            {{ trans('messages.sign_in') }}
+                        </button>
+                    </div>
+
+                    <div class="row loginbtn">
+                        <a href="{{URL::to('register')}}" class="btn btn-default fillwidth">
+                            {{ trans('messages.register') }}
+                        </a>
+                    </div>
                   {!! Form::close() !!}
 
                 </div>
