@@ -8,8 +8,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Ghanem\Rating\Contracts\Ratingable;
 use Ghanem\Rating\Traits\Ratingable as RatingTrait;
 
-class Course extends Model implements Ratingable
-{
+class Course extends Model implements Rating
+{ 
 	use SoftDeletes;
 	use Sluggable;
 	use RatingTrait;
@@ -74,7 +74,12 @@ class Course extends Model implements Ratingable
 	}
 
 	public function averageRatingRound()
-	{
-		return round($this->averageRating());
+	{	
+		$rating = $this->averageRating();
+		if ($rating) {
+			return round($rating);
+		} else {
+			return 0;
+		}		
 	}
 }

@@ -101,6 +101,14 @@ Route::group(['namespace' => 'Backend', 'middleware' => ['auth', 'admin'], 'pref
 
 Route::get('test',function (){
     //echo Request::path();
-    $data = Request::is('test*');
-    dd($data);
+    $courses = App\Course::all();
+    foreach ($courses as $course) {
+        $rating = $course->averageRating()->all();
+        //dd($rating);
+        if (!is_null($rating[0])) {
+            echo $rating;
+        } else {
+            echo 0;
+        }
+    }
 });

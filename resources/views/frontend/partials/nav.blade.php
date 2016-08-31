@@ -36,6 +36,7 @@
                         <li>
                             <a href="{{ URL::to('/courses') }}">{{ trans('messages.basiccourse') }}</a>
                         </li>
+                        <li role="separator" class="divider"></li>
                         <li>
                             <a href="{{ URL::to('/courses') }}">{{ trans('messages.advancourse') }}</a>
                         </li>
